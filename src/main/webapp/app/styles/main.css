@@ -1,0 +1,110 @@
+div.row.user-row.ng-scope {
+    padding: 10px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+div.user-row:first-child {
+    border-top: 1px solid #e7e7e7;
+    margin-top: 20px;
+}
+
+div.row.user-row:hover {
+    background-color: rgb(248, 248, 248);
+}
+
+.dropdown-user {
+    padding-top: 11px;
+}
+
+.action-row {
+    margin-bottom: 15px;
+}
+
+.glyphicon {
+    padding-right: 5px;
+}
+
+.task-holder-main{
+    right: 50px;
+}
+
+.task-holder {
+    /*height: 500px;*/
+    width: 500px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    float: right;
+    margin-left: 15px;
+}
+
+.task-holder .title-bar{
+
+    padding: 10px;
+    margin: -1px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid transparent;
+    border-color: #e7e7e7;
+}
+
+div.row.user-row > div {
+    height: 40px;
+}
+
+.row-danger {
+    border-bottom:1px solid #d43f3a!important;
+}
+
+.row-success{
+
+}
+
+.row-warning{
+    border-bottom:1px solid #eea236!important;
+}
+
+.aaFuture{
+
+}
+
+.aaPast{
+    color:#d43f3a;
+}
+
+.aaCurrent{
+    color:#ff851b;
+}
+
+
+.taskForm .form-group{
+    margin:5px 5px;
+
+}
+
+.rowSplitter{
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-left: -30px!important;
+    margin-right: -30px!important;
+
+}
+
+
+li.selected {
+    color: #333333 !important;
+    background-color: rgb(248, 248, 248);
+}
+
+h4.tableHeader{
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-left: 10px;
+
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="activitiApp" ng-controller="RootCtrl">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser.
+    <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a
+            href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience
+    this site.</p>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <!--<script src="components/es5-shim/es5-shim.js"></script>
+  <script src="components/json3/lib/json3.min.js"></script>-->
+<![endif]-->
+<div class="container" ng-show="loggedin">
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="http://www.jquery2dotnet.com">Brand</a>-->
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a ng-click="changeView('dashboard')"><span class="glyphicon glyphicon-home"></span>Dashboard</a>
+                </li>
+                <li><a ng-click="changeView('tasks')"><span class="glyphicon glyphicon-calendar"></span>My Tasks</a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                        class="glyphicon glyphicon-list-alt"></span>Administer <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="changeView('users')">Users</a></li>
+                        <li><a ng-click="changeView('groups')">Groups</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a ng-click="changeView('processes')"><span class="glyphicon glyphicon-cog"></span>Processes</a>
+
+                </li>
+                <li>
+                    <a ng-click="changeView('instances')"><span class="glyphicon glyphicon-play-circle"></span>Instances</a>
+
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-show="loggedin" class="dropdown" ng-show="loggedin"><a href="#" class="dropdown-toggle"
+                                                                              data-toggle="dropdown"><span
+                        class="glyphicon glyphicon-user"></span>{{loggedUser.firstName +' ' +loggedUser.lastName }} <b
+                        class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+
+<div ng-view></div>
+
+
+<script src="components/angular/angular.min.js"></script>
+<script src="components/angular-resource/angular-resource.min.js"></script>
+<!--<script src="components/angular-ui/build/angular-ui.min.js"></script>-->
+<!--<script src="components/angular-bootstrap/ui-bootstrap.min.js"></script>-->
+<script src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="components/angular-route/angular-route.js"></script>
+
+<script src="components/moment/moment.js"></script>
+<script src="components/angular-moment/angular-moment.js"></script>
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+
+<script src="scripts/controllers/root.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/dashboard.js"></script>
+<script src="scripts/controllers/task.js"></script>
+<script src="scripts/controllers/users.js"></script>
+<script src="scripts/controllers/groups.js"></script>
+<script src="scripts/controllers/processes.js"></script>
+<script src="scripts/controllers/TaskModelController.js"></script>
+<script src="scripts/controllers/instances.js"></script>
+
+
+<script src="scripts/directives/pastTime.js"></script>
+<script src="scripts/directives/activitiForm.js"></script>
+<script src="scripts/directives/activitiTaskDefault.js"></script>
+
+
+<script src="scripts/factory/Base64.js"></script>
+<script src="scripts/factory/userService.js"></script>
+<script src="scripts/factory/groupService.js"></script>
+<script src="scripts/factory/groupUserService.js"></script>
+<script src="scripts/factory/forms.js"></script>
+<script src="scripts/factory/tasks.js"></script>
+<script src="scripts/factory/processDefinitionService.js"></script>
+<script src="scripts/factory/processInstancesService.js"></script>
+<script src="scripts/factory/processInstanceService.js"></script>
+<script src="scripts/factory/tasksModal.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

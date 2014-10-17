@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="" method="post">
+                    <fieldset>
+                        <legend class="text-center">{{loggedUser.firstName}}</legend>
+
+                        <!-- Name input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="name">First Name</label>
+
+                            <div class="col-md-8">
+                                <input id="name" name="name" type="text" placeholder="Your name" class="form-control"
+                                       ng-model="loggedUser.firstName" ng-disabled="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="name">Last Name</label>
+
+                            <div class="col-md-8">
+                                <input id="name" name="name" type="text" placeholder="Your name" class="form-control"
+                                       ng-model="loggedUser.lastName" ng-disabled="true">
+                            </div>
+                        </div>
+
+                        <!-- Email input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Your E-mail</label>
+
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="text" placeholder="Your email" class="form-control"
+                                       ng-model="loggedUser.email" ng-disabled="true">
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </form>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-8 ">
+            <div class="well well-sm">
+                <fieldset>
+                    <legend class="text-center">Dashboard</legend>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="name">Number of tasks</label>
+
+                        <div class="col-md-9">
+                            <input id="name" name="name" type="text" placeholder="Number of tasks" class="form-control"
+                                   ng-model="tasks.data.length" ng-disabled="true">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

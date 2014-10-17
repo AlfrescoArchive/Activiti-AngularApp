@@ -1,0 +1,35 @@
+<div class="container">
+
+
+    <div class="row row action-row">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <button class="btn btn-default" ng-click="open()">Add Group</button>
+        </div>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <input name="name" type="text" placeholder="Query" class="form-control"
+                   ng-model="query">
+        </div>
+
+    </div>
+
+
+    <div class="table-holder">
+        <div class="row user-row" ng-repeat="group in groups.data | filter:query">
+            <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
+                <img class="img-circle"
+                     src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=32"
+                     alt="User Pic">
+            </div>
+            <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10" ng-click="showGroupUsers(group)">
+                <strong>{{group.name}}</strong><br>
+                <span class="text-muted">{{group.type}}</span>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user">
+                <a ng-click="removeGroup(group)"> <i class="glyphicon glyphicon-remove text-muted"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

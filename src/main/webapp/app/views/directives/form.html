@@ -1,0 +1,75 @@
+
+        <div class="row taskForm" ng-repeat="item in taskDetailed.form.formProperties">
+            <div class="form-group">
+                <label>{{item.name}} <span ng-show="item.required">* </span></label>
+
+                <input ng-if="item.type=='string'" ng-visible="item.readable"
+                       ng-disabled="{{item.writable == false}}" ng-required="item.required"
+                       type="text" class="form-control" placeholder="{{item.name}}"
+                       ng-model="taskDetailed.propertyForSaving[item.id].value">
+
+
+                <input ng-if="item.type=='long'" ng-visible="item.readable" ng-enabled="item.writable"
+                       ng-required="item.required"
+                       type="number" class="form-control" placeholder="{{item.name}}"
+                       ng-model="taskDetailed.propertyForSaving[item.id].value">
+
+
+
+
+                <input ng-if="item.type=='boolean'" ng-visible="item.readable" ng-enabled="item.writable"
+                       ng-required="item.required"
+                       type="checkbox" class="form-control" placeholder="{{item.name}}"
+                       ng-model="taskDetailed.propertyForSaving[item.id].value" style="width:16px;">
+
+                <div ng-if="item.type=='enum'" class="btn-group" dropdown>
+                    <button type="button" class="btn btn-primary dropdown-toggle" ng-visible="item.readable"
+                            ng-enabled="item.writable" ng-required="item.required">
+                        {{taskDetailed.propertyForSaving[item.id].value==null?"Select":taskDetailed.propertyForSaving[item.id].name}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="enum in item.enumValues">
+                            <a id="{{enum.id}}"
+                               ng-click="setFormEnum(enum,taskDetailed.propertyForSaving[item.id])">{{enum.name}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div ng-if="item.type=='user'" class="btn-group" dropdown>
+                    <button type="button" class="btn btn-primary dropdown-toggle" ng-visible="item.readable"
+                            ng-enabled="item.writable" ng-required="item.required">
+                        {{taskDetailed.propertyForSaving[item.id].value==null?"Select":taskDetailed.propertyForSaving[item.id].name}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="enum in item.enumValues.data">
+                            <a id="{{enum.id}}"
+                                    ng-click="setFormEnum(enum,taskDetailed.propertyForSaving[item.id],enum.firstName)">{{enum.firstName}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="row" ng-if="item.type=='date'">
+                    <div class="col-md-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" datepicker-popup="{{item.datePattern}}"
+                                   is-open="taskDetailed.propertyForSaving[item.id].opened"
+                                   ng-model="taskDetailed.propertyForSaving[item.id].value"
+                                   ng-enabled="item.writable"
+                                   ng-required="item.required"
+                                   close-text="Close"/>
+                                     <span class="input-group-btn">
+                                         <button type="button" class="btn btn-default"
+                                                 ng-click="openDatePicker(taskDetailed.propertyForSaving[item.id],$event)">
+                                             <i
+                                                     class="glyphicon glyphicon-calendar"></i></button>
+                                     </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>

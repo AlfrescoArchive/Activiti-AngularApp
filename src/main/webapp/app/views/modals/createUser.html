@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h4 class="modal-title">Create user</h4>
+</div>
+<div class="modal-body">
+    <form name="createUserForm" novalidate>
+        <div class="form-group"
+             ng-class="{'has-error': createUserForm.idd.$invalid}">
+            <label>User ID</label>
+            <input class="form-control" name="idd" type="text"
+                   required placeholder="User ID"
+                   ng-model="newUser.id"/>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error': createUserForm.fName.$invalid}">
+            <label>User First Name</label>
+            <input name="fName" type="text" placeholder="User First Name" class="form-control"
+                   required
+                   ng-model="newUser.firstName">
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error': createUserForm.lName.$invalid}">
+            <label>User Last Name</label>
+            <input name="lName" type="text" placeholder="User Last Name" class="form-control"
+                   required
+                   ng-model="newUser.lastName">
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error': createUserForm.mail.$invalid}">
+            <label>User Email</label>
+            <input name="mail" type="email" placeholder="User Email" class="form-control"
+                   required
+                   ng-model="newUser.email">
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error': createUserForm.pass.$invalid}">
+            <label>User Password</label>
+            <input name="pass" type="password" placeholder="User Password" class="form-control"
+                   required
+                   ng-model="newUser.password">
+        </div>
+    </form>
+
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel();">Close</button>
+    <button type="button" class="btn btn-primary" ng-click="ok()" ng-disabled="!createUserForm.$valid">Create User
+    </button>
+</div>
+

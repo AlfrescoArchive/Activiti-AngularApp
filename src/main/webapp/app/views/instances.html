@@ -1,0 +1,31 @@
+<div class="container">
+
+
+    <div class="row row action-row">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+        </div>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <input name="name" type="text" placeholder="Query" class="form-control"
+                   ng-model="query">
+        </div>
+
+    </div>
+
+
+    <div class="table-holder">
+        <div class="row user-row" ng-repeat="instance in instances.data | filter:query"
+             ng-click="showDetails(instance)">
+            <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
+                <span class="glyphicon glyphicon-cog"></span>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                <strong>{{instance.id}}</strong><br>
+                <strong>{{instance.name}}</strong><br>
+            </div>
+       </div>
+    </div>
+</div>
