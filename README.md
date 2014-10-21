@@ -1,5 +1,7 @@
 Activiti-AngularApp
 ===================
+![alt tag](http://media1.alfrescoblog.com/2014/06/tasks.angular.png)
+
 
 ## How to run ?
 
