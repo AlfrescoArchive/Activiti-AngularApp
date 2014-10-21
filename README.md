@@ -28,7 +28,7 @@ it is assumend that:
 * Activiti tomcat runs on 8081
 * Apache runs on port 80 
  
-## How does this app looks like ?
+## How does this app look like ?
 You can find all of the images here 
 http://alfrescoblog.com/2014/09/04/angular-js-activiti-webapp-part-iii-final/
 
