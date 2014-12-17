@@ -23,11 +23,13 @@
                            class="glyphicon glyphicon-filter"></span>Filter <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu text-left ">
-                    <li ng-class="{selected: tasksType=='assigned'}"><a ng-click="loadTasksType('assigned')">My tasks</a></li>
+                    <li ng-class="{selected: tasksType=='assignee'}"><a ng-click="loadTasksType('assignee')">My tasks</a></li>
                     <li ng-class="{selected: tasksType=='owned'}"><a ng-click="loadTasksType('owned')">Owned</a></li>
                     <li ng-class="{selected: tasksType=='involved'}"><a
                             ng-click="loadTasksType('involved')">Involved</a></li>
                     <li ng-class="{selected: tasksType=='unassigned'}"><a ng-click="loadTasksType('unassigned')">Unassigned</a>
+                    </li>
+                    <li ng-class="{selected: tasksType=='candidate'}"><a ng-click="loadTasksType('candidate')">Candidate User</a>
                     </li>
 
                     <li ng-hide="userGroups.data.length==0" class="divider"></li>

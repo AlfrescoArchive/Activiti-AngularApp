@@ -11,7 +11,7 @@ angular.module('activitiApp').controller("TasksCtrl", function ($scope, $rootSco
      *
      * @type {string}
      */
-    $scope.tasksType = "assigned";
+    $scope.tasksType = "assignee";
 
     function getTasksQuery() {
         if ($scope.tasksType == "involved") {
@@ -20,7 +20,9 @@ angular.module('activitiApp').controller("TasksCtrl", function ($scope, $rootSco
             return {"size": 1000, "owner": $rootScope.username};
         } else if ($scope.tasksType == "unassigned") {
             return {"size": 1000, "unassigned": true};
-        } else {//assigned
+        } else if ($scope.tasksType == "assignee") {
+            return {"size": 1000, "assignee": $rootScope.username};
+        } else {//candidate
             return {"size": 1000, "candidateUser": $rootScope.username};
         }
     }
