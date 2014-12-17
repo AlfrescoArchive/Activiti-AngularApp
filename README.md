@@ -23,6 +23,14 @@ ProxyPass /service/ http://localhost:8081/activiti-rest/service/ retry=0 timeout
 ProxyPass / http://localhost:9000/ retry=0 timeout=30
 ```
 
+Apache will require few of the modules to be enabled, this can be done using next commands( linux)
+```
+a2enmod proxy
+a2enmod proxy_http
+```
+if you are having problems notify us or check this [nice tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension)
+
+
 Then access the angular app at
 
 ```
