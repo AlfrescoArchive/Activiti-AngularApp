@@ -2,8 +2,8 @@ angular.module('activitiApp').controller('LoginCtrl', function ($scope, $http, U
     $rootScope.loggedUser = {
 
     };
-    $scope.username = "kermit";
-    $scope.password = "kermit";
+    $scope.username = "activiti";
+    $scope.password = "activiti";
     $rootScope.loggedin = false;
 
     $scope.login = function () {
