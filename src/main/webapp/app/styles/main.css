@@ -108,3 +108,7 @@ h4.tableHeader{
     padding-left: 10px;
 
 }
+
+input.ng-dirty.ng-invalid{
+    border:1px solid red;
+}

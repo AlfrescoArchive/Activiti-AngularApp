@@ -21,7 +21,7 @@ angular.module('activitiApp').controller("TasksCtrl", function ($scope, $rootSco
         } else if ($scope.tasksType == "unassigned") {
             return {"size": 1000, "unassigned": true};
         } else {//assigned
-            return {"size": 1000, "assignee": $rootScope.username};
+            return {"size": 1000, "candidateUser": $rootScope.username};
         }
     }
 
@@ -54,6 +54,7 @@ angular.module('activitiApp').controller("TasksCtrl", function ($scope, $rootSco
 
 
     $rootScope.$on('refreshData', function (event, data) {
+        //$scope.deta
         $scope.loadTasks();
 
     });

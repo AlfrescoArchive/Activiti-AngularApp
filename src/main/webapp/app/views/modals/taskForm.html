@@ -19,14 +19,16 @@
 <div class="modal-body">
     <div class="row" style="     padding: 10px;    padding-top: 0px;">
         <div class="col-md-12  col-sm-12 cel">
-            <aa-Task-Default></aa-Task-Default>
-            <aa-form></aa-form>
+            <form name="form">
+                <aa-Task-Default></aa-Task-Default>
+                <aa-form></aa-form>
+            </form>
         </div>
     </div>
 </div>
 
 <div class="modal-footer">
     <button type="button" class="btn btn-default" ng-click="cancel(taskDetailed);">Close</button>
-    <button type="button" class="btn btn-primary" ng-click="finish(taskDetailed)">Finish Task</button>
+    <button type="button" class="btn btn-primary" ng-click="finish(taskDetailed)" ng-disabled="form.$invalid">Finish Task</button>
 </div>
 

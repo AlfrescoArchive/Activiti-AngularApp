@@ -43,11 +43,11 @@ angular.module('activitiApp').controller('InstancesCtrl', function ($scope, $roo
             $modalInstance.dismiss('cancel');
         };
 
-        $scope.diagram = "/service/process-instance/"+instance.id+"/diagram";
+        $scope.diagram = "/service/runtime/process-instances/"+instance.id+"/diagram";
 
 
 
-        $scope.instance.details = ProcessInstanceService.get({processInstance:instance.id});
+        $scope.instance.details = ProcessInstancesService.get({processInstance:instance.id});
     }
 
     $scope.showDetails = function (instance) {

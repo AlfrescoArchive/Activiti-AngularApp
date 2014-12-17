@@ -1,4 +1,4 @@
-angular.module('activitiApp').factory('TasksModalService', function ($modal, FormDataService, TasksService, $rootScope,UserService,ProcessInstanceService) {
+angular.module('activitiApp').factory('TasksModalService', function ($modal, FormDataService, TasksService, $rootScope,UserService,ProcessInstanceService,ProcessInstancesService) {
 
     var ModalInstanceCtrl = function ($scope, $modalInstance, moment, taskDetailed) {
         $scope.taskDetailed = taskDetailed;
@@ -90,7 +90,7 @@ angular.module('activitiApp').factory('TasksModalService', function ($modal, For
             if (typeof detailedTask.propertyForSaving != "undefined") {
                 var objectToSave = extractDataFromFormForProcess(detailedTask);
 
-                var saveForm = new ProcessInstanceService(objectToSave);
+                var saveForm = new ProcessInstancesService(objectToSave);
                 saveForm.$save(function () {
                     emitRefresh();
                     $modalInstance.dismiss('cancel');
