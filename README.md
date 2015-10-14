@@ -59,4 +59,5 @@ http://alfrescoblog.com/2014/09/04/angular-js-activiti-webapp-part-iii-final/
 
 
 
-
+## Licence
+ Open-source and distributed under the Apache license.
